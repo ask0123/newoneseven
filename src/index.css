@@ -2,14 +2,215 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+/* :root {
+  font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+} */
+/* General Styling */
+body {
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* White Background */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
+
+header {
+  background-color: #ae5406; 
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+
+nav {
+  background-color: #ad1457; 
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #000000; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #c50a49; 
+}
+
+
+main {
+  padding: 2rem;
+  background-color: #ffffff; 
+}
+
+h1, h2, h3 {
+  color: #ad1457; 
+}
+
+p {
+  line-height: 1.6;
+}
+
+
+button, .btn {
+  background-color: #d81b60; 
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: #ad1457; 
+}
+
+form {
+  background-color: whitesmoke;
+  padding: 1rem;
+  border: 1px solid whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  color: #da0361; 
+  margin-bottom: 0.5rem;
+}
+
+form input, form textarea {
+  width: 95%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #d81b60;
+  box-shadow: 0 0 5px rgba(216, 27, 96, 0.5);
+}
+
+form button {
+  background-color: #d81b60;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #ad1457;
+}
+
+
+footer {
+  background-color: #ad1457; 
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+  
+  form {
+    padding: 0.75rem;
+  }
+}
+
 
 body {
   margin: 0;
-  min-width: 320px;
+  padding: 0;
+  font-family: 'Lora', serif;
+  color: #333;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('D:\ONE\newoneseven\clg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1; 
+}
+
+header, nav, main, footer {
+  position: relative;
+  z-index: 2; 
+  background-color: whitesmoke;
 }

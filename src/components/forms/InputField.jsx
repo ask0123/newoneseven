@@ -1,3 +1,4 @@
+import React from 'react'; 
 export default function InputField({ label, type = 'text', name, value, onChange, required = false }) {
   return (
     <div className="mb-4">

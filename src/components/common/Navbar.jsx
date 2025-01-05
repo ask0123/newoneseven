@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import React from 'react'; 
 
 export default function Navbar() {
   return (
@@ -7,7 +8,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-red-800">
-              College Placement System
+              Placepro 
             </Link>
           </div>
         </div>

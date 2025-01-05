@@ -1,9 +1,10 @@
 from django.db import models
+from .base_model import BaseModel
 
-class Interview(models.Model):
-    student = models.ForeignKey('placement.Student', on_delete=models.CASCADE)
-    company = models.ForeignKey('placement.Company', on_delete=models.CASCADE)
-    job = models.ForeignKey('placement.Job', on_delete=models.CASCADE)
+class Interview(BaseModel):
+    student = models.ForeignKey('Student', on_delete=models.CASCADE)
+    company = models.ForeignKey('Company', on_delete=models.CASCADE)
+    job = models.ForeignKey('Job', on_delete=models.CASCADE)
     date = models.DateField()
     time = models.TimeField()
     status = models.CharField(max_length=20, choices=[
@@ -11,7 +12,9 @@ class Interview(models.Model):
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled')
     ])
-    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.student.name} - {self.company.name} Interview"
+
+    class Meta:
+        db_table = 'placement_interview'
